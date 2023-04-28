@@ -1,6 +1,7 @@
 package com.example.controllers;
 
-import com.example.model.User;
+import com.example.entity.User;
+import com.example.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,10 +12,15 @@ import com.example.service.UserService;
 @Controller
 public class MyAppController {
 
-    private UserService userService;
+    @Autowired
+    private final UserService userService;
+
+//    public MyAppController() {}
 
     @Autowired
-    public void setUserService(UserService userService) { this.userService = userService; }
+    public MyAppController(UserService userService) {
+        this.userService = userService;
+    }
 
     @GetMapping("/test")
     public String emptyPage() {
@@ -55,8 +61,7 @@ public class MyAppController {
     public ModelAndView deleteUser(@PathVariable("id") int id) {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("redirect:/");
-        User user = userService.getById(id);
-        userService.deleteUser(user);
+        userService.deleteUser(id);
         return modelAndView;
     }
 
