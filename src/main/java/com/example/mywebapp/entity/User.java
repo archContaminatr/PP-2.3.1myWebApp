@@ -1,4 +1,4 @@
-package com.example.entity;
+package com.example.mywebapp.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 

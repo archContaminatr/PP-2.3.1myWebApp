@@ -1,18 +1,12 @@
-package com.example.dao;
+package com.example.mywebapp.dao;
 
-import com.example.entity.User;
-import org.springframework.stereotype.Component;
+import com.example.mywebapp.entity.User;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
 
 
 @Repository
@@ -24,20 +18,23 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public List<User> allUsers() {
-        return entityManager.createQuery(
-                "select u from User u", User.class).getResultList();
+        return entityManager.createQuery("select u from User u", User.class).getResultList();
     }
 
+    @Transactional
     @Override
     public void addUser(User user) {
         entityManager.persist(user);
     }
 
+    @Transactional
     @Override
     public void deleteUser(int id) {
-        entityManager.remove(entityManager.find(User.class, id));
+        entityManager.createQuery("delete from User u where u.id = :id").
+                setParameter("id", id).executeUpdate();
     }
 
+    @Transactional
     @Override
     public void editUser(User user) {
         entityManager.merge(user);

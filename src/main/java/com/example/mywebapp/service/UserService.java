@@ -1,11 +1,10 @@
-package com.example.dao;
+package com.example.mywebapp.service;
 
-import com.example.entity.User;
+import com.example.mywebapp.entity.User;
 
 import java.util.List;
 
-public interface UserDAO {
-
+public interface UserService {
     List<User> allUsers();
     void addUser(User user);
     void deleteUser(int id);

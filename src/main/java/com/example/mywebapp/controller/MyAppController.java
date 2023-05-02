@@ -1,30 +1,19 @@
-package com.example.controllers;
+package com.example.mywebapp.controller;
 
-import com.example.entity.User;
-import com.example.service.UserServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.mywebapp.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import com.example.service.UserService;
+import com.example.mywebapp.service.UserService;
 
 @Controller
 public class MyAppController {
 
-    @Autowired
     private final UserService userService;
 
-//    public MyAppController() {}
-
-    @Autowired
     public MyAppController(UserService userService) {
         this.userService = userService;
-    }
-
-    @GetMapping("/test")
-    public String emptyPage() {
-        return "view";
     }
 
     @GetMapping("/")
@@ -33,7 +22,7 @@ public class MyAppController {
         return "users";
     }
 
-    @GetMapping(value = "/edit/{id}")
+    @GetMapping("/edit/{id}")
     public String editPage(@PathVariable("id") int id, Model model) {
         model.addAttribute("user", userService.getById(id));
         return "editPage";
@@ -51,9 +40,10 @@ public class MyAppController {
         return "addPage";
     }
 
-    @PostMapping(value = "/add")
+    @PostMapping("/add")
     public ModelAndView addUser(@ModelAttribute("user") User user) {
         userService.addUser(user);
+        System.out.println(user.getFirstName());
         return new ModelAndView("redirect:/");
     }
 
@@ -64,6 +54,5 @@ public class MyAppController {
         userService.deleteUser(id);
         return modelAndView;
     }
-
 
 }
