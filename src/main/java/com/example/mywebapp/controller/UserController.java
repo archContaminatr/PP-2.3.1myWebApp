@@ -7,9 +7,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import com.example.mywebapp.service.UserService;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Controller
 public class UserController {
 
