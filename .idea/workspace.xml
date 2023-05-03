@@ -9,14 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0427e701-5327-4229-9a4c-a34328b80b7d" name="Changes" comment="Task ready">
+    <list default="true" id="0427e701-5327-4229-9a4c-a34328b80b7d" name="Changes" comment="userDAO deleteUser fixed&#10;@Transactional fixed&#10;MyAppController.java --&gt; UserController.java&#10;Patch&amp;Delete mappings added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mywebapp/config/AppInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mywebapp/config/AppInit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mywebapp/controller/MyAppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mywebapp/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mywebapp/dao/UserDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mywebapp/dao/UserDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mywebapp/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mywebapp/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/editPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/editPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/users.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -295,7 +289,8 @@
       <workItem from="1682669416993" duration="6068000" />
       <workItem from="1682852718691" duration="8339000" />
       <workItem from="1683022160348" duration="6641000" />
-      <workItem from="1683100440318" duration="7477000" />
+      <workItem from="1683100440318" duration="7629000" />
+      <workItem from="1683108247612" duration="2820000" />
     </task>
     <task id="LOCAL-00001" summary="misc added">
       <created>1682247730667</created>
@@ -325,7 +320,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683013848926</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="userDAO deleteUser fixed&#10;@Transactional fixed&#10;MyAppController.java --&gt; UserController.java&#10;Patch&amp;Delete mappings added">
+      <created>1683108145928</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683108145928</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,6 +349,7 @@
     <MESSAGE value="controller added" />
     <MESSAGE value="All but Hibernate" />
     <MESSAGE value="Task ready" />
-    <option name="LAST_COMMIT_MESSAGE" value="Task ready" />
+    <MESSAGE value="userDAO deleteUser fixed&#10;@Transactional fixed&#10;MyAppController.java --&gt; UserController.java&#10;Patch&amp;Delete mappings added" />
+    <option name="LAST_COMMIT_MESSAGE" value="userDAO deleteUser fixed&#10;@Transactional fixed&#10;MyAppController.java --&gt; UserController.java&#10;Patch&amp;Delete mappings added" />
   </component>
 </project>

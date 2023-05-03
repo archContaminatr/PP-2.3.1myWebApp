@@ -21,9 +21,7 @@ public class UserController {
 
     @GetMapping("/")
     public String modelMainPage(Model model) {
-        List<User> result = new ArrayList<>();
-        userService.allUsers().forEach(result::add);
-        model.addAttribute("usersList", result);
+        model.addAttribute("usersList", userService.allUsers());
         return "users";
     }
 
