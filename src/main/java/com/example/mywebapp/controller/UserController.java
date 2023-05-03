@@ -7,18 +7,23 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import com.example.mywebapp.service.UserService;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
-public class MyAppController {
+public class UserController {
 
     private final UserService userService;
 
-    public MyAppController(UserService userService) {
+    public UserController(UserService userService) {
         this.userService = userService;
     }
 
     @GetMapping("/")
     public String modelMainPage(Model model) {
-        model.addAttribute("usersList", userService.allUsers());
+        List<User> result = new ArrayList<>();
+        userService.allUsers().forEach(result::add);
+        model.addAttribute("usersList", result);
         return "users";
     }
 
@@ -28,7 +33,7 @@ public class MyAppController {
         return "editPage";
     }
 
-    @PostMapping("/edit")
+    @PatchMapping("/{id}")
     public ModelAndView editUser(@ModelAttribute("user") User user) {
         userService.editUser(user);
         return new ModelAndView("redirect:/");
@@ -47,12 +52,10 @@ public class MyAppController {
         return new ModelAndView("redirect:/");
     }
 
-    @GetMapping("/remove/{id}")
+    @DeleteMapping("/{id}")
     public ModelAndView deleteUser(@PathVariable("id") int id) {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("redirect:/");
         userService.deleteUser(id);
-        return modelAndView;
+        return new ModelAndView("redirect:/");
     }
 
 }

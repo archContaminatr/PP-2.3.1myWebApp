@@ -6,7 +6,8 @@
 </head>
 
 <body>
-<form th:method="POST" th:action="@{/edit}" th:object="${user}">
+<form th:method="PATCH" th:action="@{/id}" th:object="${user}">
+    <input type="hidden" name="_method" value="patch">
     <input type="hidden" th:field="*{id}">
 
     <label for="firstName">Имя</label>
